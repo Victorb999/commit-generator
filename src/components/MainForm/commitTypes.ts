@@ -1,4 +1,20 @@
-export const commitTypes = {
+interface commitTypes {
+  build: string;
+  static: string;
+  ci: string;
+  cd: string;
+  docs: string;
+  feat: string;
+  fix: string;
+  perf: string;
+  refactor: string;
+  improve: string;
+  style: string;
+  test: string;
+  revert: string;
+}
+
+export const commitTypes: commitTypes = {
   build: "alterações que afetam o sistema de build ou dependências externas",
   static:
     "alterações no conteúdo de arquivos estáticos (dados .json, imagens, etc)",

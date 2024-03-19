@@ -79,7 +79,11 @@ export const MainForm = () => {
                   </SelectContent>
                 </Select>
                 <TooltipInfo
-                  msg={form.type ? commitTypes[form.type] : "O tipo de commit"}
+                  msg={
+                    form.type !== ""
+                      ? commitTypes[form.type as keyof typeof commitTypes]
+                      : "O tipo de commit"
+                  }
                 />
               </div>
 

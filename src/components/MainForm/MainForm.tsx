@@ -43,6 +43,16 @@ export const MainForm = () => {
     console.log(msg);
   };
 
+  const handleClear = () => {
+    setForm({
+      type: "",
+      system: "",
+      title: "",
+      description: "",
+      cardNumber: "",
+    });
+  };
+
   return (
     <div
       className="flex flex-col
@@ -60,6 +70,7 @@ export const MainForm = () => {
           >
             <div className="flex gap-2 items-center">
               <Select
+                value={form.type}
                 onValueChange={(value: any) =>
                   setForm({ ...form, type: value })
                 }
@@ -90,6 +101,7 @@ export const MainForm = () => {
                 name="system"
                 placeholder="Sistema"
                 required
+                value={form.system}
                 onChange={(e) => setForm({ ...form, system: e.target.value })}
               />
               <TooltipInfo msg={`O sistema que está alterando.`} />
@@ -101,6 +113,7 @@ export const MainForm = () => {
                 name="titleCommit"
                 placeholder="Título"
                 required
+                value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
               />
               <TooltipInfo
@@ -116,6 +129,7 @@ export const MainForm = () => {
                 placeholder="Descrição"
                 name="descriptionCommit"
                 required
+                value={form.description}
                 onChange={(e) =>
                   setForm({ ...form, description: e.target.value })
                 }
@@ -135,6 +149,7 @@ export const MainForm = () => {
                 name="cardNumber"
                 placeholder="Card"
                 required
+                value={form.cardNumber}
                 onChange={(e) =>
                   setForm({ ...form, cardNumber: e.target.value })
                 }
@@ -154,6 +169,14 @@ export const MainForm = () => {
               }
             >
               Gerar mensagem
+            </Button>
+            <Button
+              type="button"
+              className="mt-2"
+              variant="secondary"
+              onClick={handleClear}
+            >
+              Limpar campos
             </Button>
             <AlertMessage msg={msg} open={open} setOpen={setOpen} />
           </form>

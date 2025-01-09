@@ -164,7 +164,6 @@ export const MainForm = () => {
                 !form.type ||
                 !form.system ||
                 !form.title ||
-                !form.description ||
                 !form.cardNumber
               }
             >

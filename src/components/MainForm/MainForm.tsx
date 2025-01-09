@@ -128,7 +128,6 @@ export const MainForm = () => {
               <Textarea
                 placeholder="Descrição"
                 name="descriptionCommit"
-                required
                 value={form.description}
                 onChange={(e) =>
                   setForm({ ...form, description: e.target.value })
